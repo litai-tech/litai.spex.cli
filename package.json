@@ -24,11 +24,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/litai-spex.git"
+    "url": "https://github.com/litai-tech/litai.spex.cli.git"
   },
-  "homepage": "https://github.com/yourusername/litai-spex#readme",
+  "homepage": "https://github.com/litai-tech/litai.spex.cli#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/litai-spex/issues"
+    "url": "https://github.com/litai-tech/litai.spex.cli/issues"
   },
   "engines": {
     "node": ">=14.0.0"
