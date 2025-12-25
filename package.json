@@ -1,0 +1,46 @@
+{
+  "name": "litai-spex",
+  "version": "1.0.0",
+  "description": "CLI tool for deploying files via SSH with configurable exclusions",
+  "main": "src/index.js",
+  "bin": {
+    "litai-spex": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "cli",
+    "ssh",
+    "deploy",
+    "sftp",
+    "upload",
+    "remote",
+    "deployment",
+    "devops"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/litai-spex.git"
+  },
+  "homepage": "https://github.com/yourusername/litai-spex#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/litai-spex/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "src/**/*",
+    "README.md"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "node-ssh": "^13.2.0",
+    "ora": "^5.4.1"
+  }
+}
