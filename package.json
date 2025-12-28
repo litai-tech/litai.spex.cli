@@ -1,6 +1,6 @@
 {
   "name": "litai-spex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool for deploying files via SSH with configurable exclusions",
   "main": "src/index.js",
   "bin": {
