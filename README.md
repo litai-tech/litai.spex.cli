@@ -22,7 +22,7 @@ npm link
    litai-spex init
    ```
 
-2. Edit `config.json` with your server details
+2. Edit `deployment-config.json` with your server details
 
 3. Deploy:
    ```bash
@@ -34,7 +34,7 @@ npm link
 ### Commands
 
 #### `litai-spex init`
-Creates a `config.json` file with default settings and a sample `deploy.sh` script.
+Creates a `deployment-config.json` file with default settings and a sample `deploy.sh` script.
 
 #### `litai-spex deploy [options]`
 Deploys files from the current directory to a remote server.
@@ -48,7 +48,7 @@ Deploys files from the current directory to a remote server.
 | `-k, --key <path>` | Path to private key file |
 | `-dir, --directory <path>` | Target directory on remote server |
 | `-r, --run [script]` | Run script after deployment (default: deploy.sh) |
-| `-c, --config <path>` | Path to config file (default: config.json) |
+| `-c, --config <path>` | Path to config file (default: deployment-config.json) |
 
 #### `litai-spex create-project [options]`
 Clones a git repository from URL specified in config or CLI.
@@ -61,7 +61,7 @@ Clones a git repository from URL specified in config or CLI.
 | `-b, --branch <branch>` | Branch to clone |
 | `--depth <depth>` | Create a shallow clone with specified depth |
 | `-i, --install` | Auto-install npm dependencies after clone |
-| `-c, --config <path>` | Path to config file (default: config.json) |
+| `-c, --config <path>` | Path to config file (default: deployment-config.json) |
 
 #### `litai-spex scan [options]`
 Scans local network for SSH hosts and optionally saves found hosts to config.
@@ -74,7 +74,7 @@ Scans local network for SSH hosts and optionally saves found hosts to config.
 | `-p, --password <password>` | SSH password to test (can also be set in config) |
 | `-t, --timeout <ms>` | Connection timeout in milliseconds (default: 1000) |
 | `--threads <n>` | Number of parallel scans (default: 20) |
-| `-c, --config <path>` | Path to config file (default: config.json) |
+| `-c, --config <path>` | Path to config file (default: deployment-config.json) |
 
 ### Examples
 
@@ -122,7 +122,7 @@ litai-spex scan -u admin --threads 50        # Faster scan with more threads
 
 ## Configuration
 
-### config.json Structure
+### deployment-config.json Structure
 
 ```json
 {
@@ -145,7 +145,7 @@ litai-spex scan -u admin --threads 50        # Faster scan with more threads
       "package-lock.json",
       ".env.local",
       ".DS_Store",
-      "config.json"
+      "deployment-config.json"
     ],
     "excludePatterns": [
       "*.log",
@@ -220,7 +220,7 @@ litai-spex deploy -r
 
 ## Security Notes
 
-1. **Never commit `config.json`** - Add it to `.gitignore`
+1. **Never commit `deployment-config.json`** - Add it to `.gitignore`
 2. **Use SSH keys** when possible instead of passwords
 3. **Secure your deploy.sh** - It runs with the connected user's permissions
 

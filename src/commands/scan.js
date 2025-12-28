@@ -181,7 +181,7 @@ async function scanCommand(options) {
   
   try {
     // Load config for username/password
-    const configPath = options.config || 'config.json';
+    const configPath = options.config || 'deployment-config.json';
     let config = {};
     
     try {
@@ -198,7 +198,7 @@ async function scanCommand(options) {
       console.log(chalk.red('❌ No username specified.'));
       console.log(chalk.gray('\nProvide it via:'));
       console.log(chalk.gray('   • CLI: litai-spex scan -u <username>'));
-      console.log(chalk.gray('   • Config: Set "connection.username" in config.json\n'));
+      console.log(chalk.gray('   • Config: Set "connection.username" in deployment-config.json\n'));
       process.exit(1);
     }
     
@@ -287,7 +287,7 @@ async function scanCommand(options) {
       }
       
       // Ask user if they want to save this IP
-      const answer = await prompt(chalk.cyan(`   Save ${ip} to config.json? (y/n): `));
+      const answer = await prompt(chalk.cyan(`   Save ${ip} to deployment-config.json? (y/n): `));
       
       if (answer === 'y' || answer === 'yes') {
         try {

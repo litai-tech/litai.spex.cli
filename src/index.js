@@ -23,12 +23,12 @@ program
   .option('-dir, --directory <path>', 'Target directory on remote server')
   .option('-k, --key <path>', 'Path to private key file (alternative to password)')
   .option('-r, --run [script]', 'Run script after deployment (default: deploy.sh)')
-  .option('-c, --config <path>', 'Path to config file (default: config.json)')
+  .option('-c, --config <path>', 'Path to config file (default: deployment-config.json)')
   .action(deployCommand);
 
 program
   .command('init')
-  .description('Initialize a config.json file with default settings')
+  .description('Initialize a deployment-config.json file with default settings')
   .action(initCommand);
 
 program
@@ -39,7 +39,7 @@ program
   .option('-b, --branch <branch>', 'Branch to clone')
   .option('--depth <depth>', 'Create a shallow clone with specified depth')
   .option('-i, --install', 'Auto-install npm dependencies after clone')
-  .option('-c, --config <path>', 'Path to config file (default: config.json)')
+  .option('-c, --config <path>', 'Path to config file (default: deployment-config.json)')
   .action(createProjectCommand);
 
 program
@@ -50,7 +50,7 @@ program
   .option('-p, --password <password>', 'SSH password to test')
   .option('-t, --timeout <ms>', 'Connection timeout in milliseconds (default: 1000)', parseInt)
   .option('--threads <n>', 'Number of parallel scans (default: 20)', parseInt)
-  .option('-c, --config <path>', 'Path to config file (default: config.json)')
+  .option('-c, --config <path>', 'Path to config file (default: deployment-config.json)')
   .action(scanCommand);
 
 program

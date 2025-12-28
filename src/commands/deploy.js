@@ -18,7 +18,7 @@ async function deployCommand(options) {
   try {
     // Load and merge configuration
     spinner.start('Loading configuration...');
-    const configPath = options.config || 'config.json';
+    const configPath = options.config || 'deployment-config.json';
     let config = loadConfig(configPath);
     config = mergeWithCliOptions(config, options);
     spinner.succeed('Configuration loaded');

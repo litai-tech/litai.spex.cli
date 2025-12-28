@@ -170,3 +170,4 @@ config.local.js
 config.local.json
 .litai-spex.json
 litai-spex.config.json
+deployment-config.json

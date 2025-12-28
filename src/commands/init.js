@@ -4,16 +4,16 @@ const path = require('path');
 const { DEFAULT_CONFIG } = require('../utils/config');
 
 /**
- * Init command handler - creates a default config.json file
+ * Init command handler - creates a default deployment-config.json file
  */
 async function initCommand() {
-  const configPath = path.resolve(process.cwd(), 'config.json');
+  const configPath = path.resolve(process.cwd(), 'deployment-config.json');
   
   console.log(chalk.cyan('\n🔧 LitAI-Spex Initialize\n'));
   
   // Check if config already exists
   if (fs.existsSync(configPath)) {
-    console.log(chalk.yellow('⚠️  config.json already exists in this directory.'));
+    console.log(chalk.yellow('⚠️  deployment-config.json already exists in this directory.'));
     console.log(chalk.gray('   Delete it first if you want to create a new one.\n'));
     process.exit(1);
   }
@@ -43,7 +43,7 @@ async function initCommand() {
         '.env.local',
         '.env.development',
         '.DS_Store',
-        'config.json',
+        'deployment-config.json',
         'Thumbs.db'
       ],
       excludePatterns: [
@@ -63,10 +63,10 @@ async function initCommand() {
   };
   
   fs.writeFileSync(configPath, JSON.stringify(configContent, null, 2));
-  
-  console.log(chalk.green('✅ Created config.json\n'));
+
+  console.log(chalk.green('✅ Created deployment-config.json\n'));
   console.log(chalk.gray('📝 Configuration file created with default settings.'));
-  console.log(chalk.gray('   Edit config.json to set your connection details:\n'));
+  console.log(chalk.gray('   Edit deployment-config.json to set your connection details:\n'));
   console.log(chalk.white('   {'));
   console.log(chalk.white('     "connection": {'));
   console.log(chalk.cyan('       "host": "your-server-ip",'));
@@ -78,7 +78,7 @@ async function initCommand() {
   console.log(chalk.white('     }'));
   console.log(chalk.white('   }\n'));
   
-  console.log(chalk.gray('🔒 Security tip: Add config.json to .gitignore!\n'));
+  console.log(chalk.gray('🔒 Security tip: Add deployment-config.json to .gitignore!\n'));
   
   // Create sample deploy.sh if it doesn't exist
   const deployShPath = path.resolve(process.cwd(), 'deploy.sh');

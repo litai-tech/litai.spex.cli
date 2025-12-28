@@ -17,7 +17,7 @@ async function createProjectCommand(options) {
   try {
     // Load configuration
     spinner.start('Loading configuration...');
-    const configPath = options.config || 'config.json';
+    const configPath = options.config || 'deployment-config.json';
     const config = loadConfig(configPath);
     spinner.succeed('Configuration loaded');
     
@@ -28,8 +28,8 @@ async function createProjectCommand(options) {
       console.log(chalk.red('\n❌ No repository URL specified.'));
       console.log(chalk.gray('\nProvide it via:'));
       console.log(chalk.gray('   • CLI: litai-spex create-project --repo <url>'));
-      console.log(chalk.gray('   • Config: Add "project.repositoryUrl" to config.json\n'));
-      console.log(chalk.white('   Example config.json:'));
+      console.log(chalk.gray('   • Config: Add "project.repositoryUrl" to deployment-config.json\n'));
+      console.log(chalk.white('   Example deployment-config.json:'));
       console.log(chalk.gray('   {'));
       console.log(chalk.gray('     "project": {'));
       console.log(chalk.cyan('       "repositoryUrl": "https://github.com/user/repo.git"'));

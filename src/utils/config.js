@@ -83,12 +83,12 @@ function mergeWithCliOptions(config, options) {
 function validateConfig(config) {
   const missing = [];
   
-  if (!config.connection.host) missing.push('host (use -ip or set in config.json)');
-  if (!config.connection.username) missing.push('username (use -u or set in config.json)');
+  if (!config.connection.host) missing.push('host (use -ip or set in deployment-config.json)');
+  if (!config.connection.username) missing.push('username (use -u or set in deployment-config.json)');
   if (!config.connection.password && !config.connection.privateKeyPath) {
-    missing.push('password or privateKeyPath (use -p/-k or set in config.json)');
+    missing.push('password or privateKeyPath (use -p/-k or set in deployment-config.json)');
   }
-  if (!config.connection.targetDirectory) missing.push('targetDirectory (use -dir or set in config.json)');
+  if (!config.connection.targetDirectory) missing.push('targetDirectory (use -dir or set in deployment-config.json)');
   
   return {
     isValid: missing.length === 0,
